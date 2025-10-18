@@ -95,9 +95,9 @@
         <li><a href="editbook.php"><i class="fa-solid fa-file-pen"></i> Kitap Düzenle</a></li>
         <li><a href="deletebook.php"><i class="fa-solid fa-trash"></i> Kitap Sil</a></li>
         <h3>Kullanıcı İşlemleri</h3>
-        <li><a href=""><i class="fa-solid fa-user-plus"></i> Kullanıcı Ekle</a></li>
-        <li><a href=""><i class="fa-solid fa-user-pen"></i> Kullanıcı Düzenle</a></li>
-        <li><a href=""><i class="fa-solid fa-trash"></i> Kullanıcı Sil</a></li>
+        <li><a href="createuser.php"><i class="fa-solid fa-user-plus"></i> Kullanıcı Ekle</a></li>
+        <li><a href="edituser.php"><i class="fa-solid fa-user-pen"></i> Kullanıcı Düzenle</a></li>
+        <li><a href="deleteuser.php"><i class="fa-solid fa-trash"></i> Kullanıcı Sil</a></li>
         <h3>Emanet Seçenekleri</h3>
         <li><a href=""><i class="fa-solid fa-circle-info"></i> Teslim Alınan Kitaplar</a></li>
         <li><a href=""><i class="fa-solid fa-circle-info"></i> Teslim Edilen Kitaplar</a></li>
