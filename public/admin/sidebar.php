@@ -82,26 +82,30 @@
             background-color: #ff7070ff;
             color:white;
         }
+        .active{
+            background-color: #0077ffff;
+            color: white;
+        }
         </style>
         <title><?php echo $baslik ?? "";?></title>
 </head>
 <?php include '../partials/header.php'?>
 
 <div class="sidebar">
-    <h2 class="sidebar-brand">Kütüphane<br>Admin Paneli</h2>
+    <a href="adminpanel" style="text-decoration:none;"><h2 class="sidebar-brand">Kütüphane<br>Admin Paneli</h2></a>
     <ul>
         <h3>Kitap İşlemleri</h3>
-        <li><a href="createbook.php"><i class="fa-solid fa-plus"></i> Kitap Ekle</a></li>
-        <li><a href="editbook.php"><i class="fa-solid fa-file-pen"></i> Kitap Düzenle</a></li>
-        <li><a href="deletebook.php"><i class="fa-solid fa-trash"></i> Kitap Sil</a></li>
+        <li><a href="createbook"class="<?= basename($_SERVER['PHP_SELF']) == 'createbook.php' ? 'active' : '' ?>"><i class="fa-solid fa-plus"></i> Kitap Ekle</a></li>
+        <li><a href="editbook"class="<?= basename($_SERVER['PHP_SELF']) == 'editbook.php' ? 'active' : '' ?>"><i class="fa-solid fa-file-pen"></i> Kitap Düzenle</a></li>
+        <li><a href="deletebook" class="<?= basename($_SERVER['PHP_SELF']) == 'deletebook.php' ? 'active' : '' ?>"><i class="fa-solid fa-trash"></i> Kitap Sil</a></li>
         <h3>Kullanıcı İşlemleri</h3>
-        <li><a href="createuser.php"><i class="fa-solid fa-user-plus"></i> Kullanıcı Ekle</a></li>
-        <li><a href="edituser.php"><i class="fa-solid fa-user-pen"></i> Kullanıcı Düzenle</a></li>
-        <li><a href="deleteuser.php"><i class="fa-solid fa-trash"></i> Kullanıcı Sil</a></li>
+        <li><a href="createuser" class="<?= basename($_SERVER['PHP_SELF']) == 'createuser.php' ? 'active' : '' ?>"><i class="fa-solid fa-user-plus"></i> Kullanıcı Ekle</a></li>
+        <li><a href="edituser" class="<?= basename($_SERVER['PHP_SELF']) == 'edituser.php' ? 'active' : '' ?>"><i class="fa-solid fa-user-pen"></i> Kullanıcı Düzenle</a></li>
+        <li><a href="deleteuser" class="<?= basename($_SERVER['PHP_SELF']) == 'deleteuser.php' ? 'active' : '' ?>"><i class="fa-solid fa-trash"></i> Kullanıcı Sil</a></li>
         <h3>Emanet Seçenekleri</h3>
         <li><a href=""><i class="fa-solid fa-circle-info"></i> Teslim Alınan Kitaplar</a></li>
         <li><a href=""><i class="fa-solid fa-circle-info"></i> Teslim Edilen Kitaplar</a></li>
         <h3>Diğer</h3>
-        <li><a href="../../index.php"><i class="fa-solid fa-right-from-bracket"></i> Admin Panelinden Çık</a></li>
+        <li><a href="../../index"><i class="fa-solid fa-right-from-bracket"></i> Admin Panelinden Çık</a></li>
     </ul>
 </div>
