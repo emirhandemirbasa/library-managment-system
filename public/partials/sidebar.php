@@ -89,24 +89,24 @@
             <?php endif?>
     </div>
     <ul>
-        <li><a href="../../kutuphane/index.php"><i class="fas fa-home"></i> Anasayfa</a></li>
-        <li><a href="../../kutuphane/public/books.php"><i class="fas fa-book"></i> Kitaplar</a></li>
+        <li><a href="../../kutuphane/index"><i class="fas fa-home"></i> Anasayfa</a></li>
+        <li><a href="../../kutuphane/public/books"><i class="fas fa-book"></i> Kitaplar</a></li>
         <li><a href="#"><i class="fas fa-user"></i> Üyeler</a></li>
         <li><a href="#"><i class="fas fa-list"></i> Alım Geçmişi</a></li>
         <li><a href="#"><i class="fas fa-chart-line"></i> Raporlar</a></li>
     </ul>
     <div class="buttons">
         <?php if(isset($_SESSION["isAdmin"]) && $_SESSION["isAdmin"] == true):?>
-        <a href="../../kutuphane/public/admin/adminpanel.php" class="logout" style="background-color:#fc6203">
+        <a href="../../kutuphane/public/admin/adminpanel" class="logout" style="background-color:#fc6203">
             <i class="fa-solid fa-user-tie"></i> Admin Paneli
         </a>
         <?php endif?>
         <?php if(!isset($_SESSION["fullName"])):?>
-        <a href="../../kutuphane/public/login.php" class="logout" style="background-color:#00cc00;">
+        <a href="../../kutuphane/public/login" class="logout" style="background-color:#00cc00;">
             <i class="fa-solid fa-right-to-bracket"></i> Giriş Yap
         </a>
         <?php else:?>
-        <a href="../../kutuphane/public/logout.php" class="logout" style="background-color:#ff3333;">
+        <a href="../../kutuphane/public/logout" class="logout" style="background-color:#ff3333;">
             <i class="fa-solid fa-right-from-bracket"></i> Çıkış Yap
         </a>
     <?php endif?>
