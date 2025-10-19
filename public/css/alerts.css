@@ -1,0 +1,20 @@
+.error{
+    border-radius: 10px;
+    padding:10px;
+    box-shadow: rgba(0, 0, 0, 0.3) 0px 19px 38px, rgba(0, 0, 0, 0.22) 0px 15px 12px;
+    text-align: center;
+    font-weight: 600;
+    font-size: 17px;
+    box-shadow: 
+        0 4px 6px rgba(0, 0, 0, 0.1), /* Soft drop shadow for lift */
+        0 1px 3px rgba(0, 0, 0, 0.08);
+}
+.danger{
+    background:linear-gradient(90deg, #FF0000, #CC0000);
+    color:white;
+}
+
+.success{
+    background:linear-gradient(90deg, #00ff3cff, #177e0fff);
+    color:white;
+}
