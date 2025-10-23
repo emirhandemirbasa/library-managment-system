@@ -1,0 +1,24 @@
+        form{
+            width: 100%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+        }
+        .group-box{
+            width: 80%;
+        }
+        .form-control{
+            border-radius: 20px;
+            border:none;
+            outline: none;
+            padding: 10px;
+        }
+
+        .group-box input[type="text"],textarea{
+            width: 93.7%;
+            resize: none;
+        }
+        form p{
+            margin:0;
+        }
