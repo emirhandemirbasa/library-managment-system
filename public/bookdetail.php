@@ -82,7 +82,12 @@
         <p class="label">Sayfa Sayısı: <?php echo htmlspecialchars($kitap["page_count"]);?></p>
         <p class="label">Açıklama: <span><?php echo htmlspecialchars($kitap["book_description"]);?></span></p>
         <form action="" method="POST">
+            <?php if(isset($_SESSION["fullName"])):?>
             <input type="submit" class="kitapOku" name="okuBtn" value="Kitabı Teslim Al">
+            <?php else:?>
+            <a href="login" class="kitapOku" style="background-color:red; text-decoration:none; width:100%; text-align:center;
+            display:block;"><p style="color:white;margin-top:5px;display:inline-block">Bu kitabı teslim almak için giriş yapın!</p></a>
+            <?php endif?>
         </form>
     </div>
 </div>
