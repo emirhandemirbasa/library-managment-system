@@ -26,6 +26,7 @@
             $basari = true;
             $_SESSION["isAdmin"] = isAdmin($tc);
             $_SESSION["fullName"] = getMemberDetailsByTC($tc)["name"]." ".getMemberDetailsByTC($tc)["surname"];
+            $_SESSION["member_id"] = getMemberDetailsByTC($tc)["id"];
             $loginErr = "Giriş başarılı yönlendiriliyorsunuz!";
         }
     }
