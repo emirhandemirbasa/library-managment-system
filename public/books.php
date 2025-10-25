@@ -58,7 +58,7 @@
             </div>
             <div class="card-footer">
                 <h1 class="writerName">Yazar: <span><?php echo $assoc["writer_name"];?></span></h1>
-                <a href="./bookdetail.php?bookID=<?php echo $assoc["id"];?>">Kitabı Görüntüle</a>
+                <a href="./bookdetail?bookID=<?php echo $assoc["id"];?>">Kitabı Görüntüle</a>
             </div>
         </div>
     <?php endwhile; ?>
