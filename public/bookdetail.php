@@ -70,9 +70,15 @@
             transform: scale(0.95);
         }
     </style>
+    <link rel="stylesheet" href="./css/alerts.css">
 </head>
 
+<?php require '../Controllers/teslimal.php'?>
+
 <div class="book-detail">
+    <?php if(!empty($teslimErr) && $basari == false):?>
+        <div class="error danger"><?php echo $teslimErr;?></div>
+    <?php endif?>
     <div class="book-cover">
         <img class="card-img" src="../public/images/coverImages/<?php echo $kitap["cover_photo"]?>" alt="">
     </div>
@@ -81,6 +87,10 @@
         <p class="label">Yazar Adı: <?php echo htmlspecialchars($kitap["writer_name"]);?></p>
         <p class="label">Sayfa Sayısı: <?php echo htmlspecialchars($kitap["page_count"]);?></p>
         <p class="label">Açıklama: <span><?php echo htmlspecialchars($kitap["book_description"]);?></span></p>
+        <?php if (isReadingBookByMemberAndBookId($_SESSION["member_id"],$_GET["bookID"],"select")):?>
+            <button class="kitapOku" style="background-color:red; text-decoration:none; width:100%; text-align:center;
+            display:block;"><p style="color:white;margin-top:5px;display:inline-block">Bu kitabı şuan okuyorsunuz. Bitmesine <?php echo kalanSure();?> kaldı.</p></button>
+            <?php else:?>
         <form action="" method="POST">
             <?php if(isset($_SESSION["fullName"])):?>
             <input type="submit" class="kitapOku" name="okuBtn" value="Kitabı Teslim Al">
@@ -89,10 +99,22 @@
             display:block;"><p style="color:white;margin-top:5px;display:inline-block">Bu kitabı teslim almak için giriş yapın!</p></a>
             <?php endif?>
         </form>
+        <?php endif?>
     </div>
 </div>
 
 <?php
+
+    function kalanSure(){
+        $baslangic = mysqli_fetch_assoc(isReadingBookByMemberAndBookId($_SESSION["member_id"],$_GET["bookID"],"s"))["take_date"];
+        $bitis = mysqli_fetch_assoc(isReadingBookByMemberAndBookId($_SESSION["member_id"],$_GET["bookID"],"s"))["give_date"];
+
+        $start = new DateTime();
+        $end = new DateTime($bitis);
+        $kalanSure = $start->diff($end);
+        return "".$kalanSure->format("%a gün, %h saat, %i dakika, %s saniye"); // %i dakika %s saniye
+    }
+
     function getBookById($id){
         require __DIR__.'/../Models/connection.php';
         $sql = "SELECT * FROM books WHERE id=?";
