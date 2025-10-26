@@ -87,7 +87,7 @@
         <p class="label">Yazar Adı: <?php echo htmlspecialchars($kitap["writer_name"]);?></p>
         <p class="label">Sayfa Sayısı: <?php echo htmlspecialchars($kitap["page_count"]);?></p>
         <p class="label">Açıklama: <span><?php echo htmlspecialchars($kitap["book_description"]);?></span></p>
-        <?php if (isReadingBookByMemberAndBookId($_SESSION["member_id"],$_GET["bookID"],"select")):?>
+        <?php if (isset($_SESSION["member_id"]) && isReadingBookByMemberAndBookId($_SESSION["member_id"],$_GET["bookID"],"select")):?>
             <button class="kitapOku" style="background-color:red; text-decoration:none; width:100%; text-align:center;
             display:block;"><p style="color:white;margin-top:5px;display:inline-block">Bu kitabı şuan okuyorsunuz. Bitmesine <?php echo kalanSure();?> kaldı.</p></button>
             <?php else:?>
@@ -106,7 +106,6 @@
 <?php
 
     function kalanSure(){
-        $baslangic = mysqli_fetch_assoc(isReadingBookByMemberAndBookId($_SESSION["member_id"],$_GET["bookID"],"s"))["take_date"];
         $bitis = mysqli_fetch_assoc(isReadingBookByMemberAndBookId($_SESSION["member_id"],$_GET["bookID"],"s"))["give_date"];
 
         $start = new DateTime();
