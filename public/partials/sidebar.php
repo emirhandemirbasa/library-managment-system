@@ -91,7 +91,7 @@
     <ul>
         <li><a href="../../kutuphane/index"><i class="fas fa-home"></i> Anasayfa</a></li>
         <li><a href="../../kutuphane/public/books"><i class="fas fa-book"></i> Kitaplar</a></li>
-        <li><a href="#"><i class="fas fa-user"></i> Üyeler</a></li>
+        <li><a href="../../kutuphane/public/uyeler"><i class="fas fa-user"></i> Üyeler</a></li>
         <li><a href="#"><i class="fas fa-list"></i> Alım Geçmişi</a></li>
         <li><a href="#"><i class="fas fa-chart-line"></i> Raporlar</a></li>
     </ul>
